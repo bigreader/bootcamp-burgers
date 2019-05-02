@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-12 col-md-4 col-xl-3">
+		<ul id="menu">
+			{{#each burgers}}
+			{{unless devoured}}
+			<li data-id="{{id}}">
+				<button class="btn btn-warning">Devour</button>
+				{{name}}
+			</li>
+			{{/unless}}
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-12 col-md-4 col-xl-6">
+		<p>Choose a burger to order!</p>
+		<form id="order-form">
+			<input type="text" id="burger">
+			<button class="btn btn-warning">Order</button>
+		</form>
+	</div>
+	<div class="col-12 col-md-4 col-xl-3">
+		<ul id="history">
+			{{#each burgers}}
+			{{if devoured}}
+			<li>
+				{{name}}
+			</li>
+			{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+</div>
