@@ -8,11 +8,13 @@ module.exports = {
 				if (err) throw err;
 				back(data);
 			});
+
 		} else {
 			db.query('SELECT * FROM burgers WHERE ?', where, (err, data) => {
 				if (err) throw err;
 				back(data);
 			});
+			
 		}
 	},
 

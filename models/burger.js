@@ -3,10 +3,10 @@ var orm = require('../config/orm.js');
 module.exports = {
 
 	list: function(back) {
-		orm.selectAll(data => {
+		orm.selectAll(null, data => {
 			back(data);
 		});
-	}
+	},
 
 	add: function(name, back) {
 		orm.insertOne({

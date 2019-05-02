@@ -8,6 +8,7 @@ router.use(express.json());
 
 router.get('/', (req, res) => {
 	burger.list(burgers => {
+		console.log(burgers);
 		res.render('index', {burgers:burgers});
 	});
 })
