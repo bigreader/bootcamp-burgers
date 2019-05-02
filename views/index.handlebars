@@ -1,34 +1,36 @@
-<div class="row justify-content-between">
-	<div class="col-12 col-md-4 order-md-1">
-		<p>Enter a burger to order:</p>
-		<form id="order-form" class="d-flex">
-			<input type="text" id="burger" class="form-control" placeholder="Burger Name">
-			<button type="submit" class="btn btn-warning ml-3">Order</button>
-		</form>
-	</div>
+		<div class="row justify-content-between">
 
-	<div class="col-12 col-md-4 col-xl-3 order-md-0">
-		<ul id="menu">
-			{{#each burgers}}
-			{{#unless devoured}}
-			<li data-id="{{id}}">
-				{{name}}
-				<button class="btn btn-outline-warning">Devour</button>
-			</li>
-			{{/unless}}
-			{{/each}}
-		</ul>
-	</div>
+			<div class="col-12 col-md-4 order-md-1">
+				<p>Enter a burger to order:</p>
+				<form id="order-form" class="d-flex">
+					<input type="text" id="field-name" class="form-control" placeholder="Burger Name">
+					<button type="submit" class="btn btn-warning ml-3">Order</button>
+				</form>
+			</div>
 
-	<div class="col-12 col-md-4 col-xl-3 order-md-2">
-		<ul id="history">
-			{{#each burgers}}
-			{{#if devoured}}
-			<li>
-				{{name}}
-			</li>
-			{{/if}}
-			{{/each}}
-		</ul>
-	</div>
-</div>
+			<div class="col-12 col-md-4 col-xl-3 order-md-0">
+				<ul id="menu">
+					{{#each burgers}}
+					{{#unless devoured}}
+					<li data-id="{{id}}">
+						<span class="name">{{name}}</span>
+						<button class="btn btn-outline-warning devour" data-id="{{id}}">Devour</button>
+					</li>
+					{{/unless}}
+					{{/each}}
+				</ul>
+			</div>
+
+			<div class="col-12 col-md-4 col-xl-3 order-md-2">
+				<ul id="history">
+					{{#each burgers}}
+					{{#if devoured}}
+					<li>
+						{{name}}
+					</li>
+					{{/if}}
+					{{/each}}
+				</ul>
+			</div>
+
+		</div>
